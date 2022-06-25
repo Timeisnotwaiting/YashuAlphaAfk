@@ -17,12 +17,8 @@ async def total_users(_, message: Message):
             afk_users.append(int(chat["user_id"]))
     except Exception as e:
         return await message.reply_text(f"**Error:-** {e}")
-    for omfoo in afk_users:
-        users_m = (await _.get_users(omfoo)).mention
-        m_plus_id = f"{users_m} ({omfoo})"
-        msg = """"""
-        msg +="• " + m_plus_id + "\n"
-    afk_users_msg = f"""• Afk users: \n\n {msg} \n• Count: {len(afk_users)}"""
+
+    afk_users_msg = f"Afk users :- {len(afk_users)}"
     await message.reply_text(afk_users_msg)
 
 
