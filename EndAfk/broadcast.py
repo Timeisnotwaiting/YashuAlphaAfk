@@ -59,3 +59,15 @@ async def broadcast(_, message):
         )
     except:
         pass
+
+@Client.on_message(filters.command("schats") & filters.user(SUDOERS) & ~filters.edited & ~filters.forwarded)
+async def schats(_, m: Message):
+    chats = []
+    schats = await get_served_chats()
+    for chat in schats:
+        chats.append(int(chat["chat_id"]))
+    msg = ""
+    for i in chats:
+        i = str(i)
+        msg += f"\n{i}"
+    await m.reply(f"**Served chats** :-\n{msg}\n**Count** :- {len(chats)}")
