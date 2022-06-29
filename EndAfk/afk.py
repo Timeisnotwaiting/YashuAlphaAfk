@@ -171,8 +171,16 @@ async def active_afk(_, message: Message):
     I = await _.get_chat_member(message.chat.id, my_id)
     if I.can_delete_messages:
         await message.delete()
-    await add_afk(user_id, details)
-    await message.reply_text(
-        f"{message.from_user.first_name} is now away from ...!"
-    )
+        await add_afk(user_id, details)
+        await message.reply_text(
+            f"{message.from_user.first_name} is now away from ...!"
+        )
+    else:
+        await add_afk(user_id, details)
+        await message.reply_text(
+            f"{message.from_user.first_name} is now away from ...!"
+        )
+    
+
+
     
