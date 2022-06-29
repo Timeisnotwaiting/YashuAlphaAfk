@@ -173,3 +173,7 @@ async def active_afk(_, message: Message):
     )
     my_id = await _.get_me().id
     I = await _.get_chat_member(message.chat.id, my_id)
+    if I.can_delete_messages:
+        await message.delete()
+    else:
+        return 
