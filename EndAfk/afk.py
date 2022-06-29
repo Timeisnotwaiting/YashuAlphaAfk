@@ -171,3 +171,5 @@ async def active_afk(_, message: Message):
     await message.reply_text(
         f"{message.from_user.first_name} is now away from ...!"
     )
+    my_id = await _.get_me().id
+    I = await _.get_chat_member(message.chat.id, my_id)
