@@ -69,5 +69,5 @@ async def schats(_, m: Message):
     msg = ""
     for i in chats:
         i = str(i)
-        msg += f"\n{i}"
+        msg += f"\n<code>{i}</code>"
     await m.reply(f"**Served chats** :-\n{msg}\n\n**Count** :- {len(chats)}")
