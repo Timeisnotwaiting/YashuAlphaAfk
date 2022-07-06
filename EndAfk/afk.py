@@ -6,10 +6,14 @@ from pyrogram.types import Message
 from EndAfk import app, botname
 from EndAfk.AlphaDB import add_afk, is_afk, remove_afk
 from EndAfk.helpers import get_readable_time
+from EndAfk.AlphaDB import is_blocked
 
 
 @Client.on_message(filters.command(["afk", "afk@EndAfkBot"]))
 async def active_afk(_, message: Message):
+    blocked = await is_blocked(message.from_user.id)
+    if blocked:
+        return
     if message.sender_chat:
         return
     user_id = message.from_user.id
