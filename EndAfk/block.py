@@ -26,5 +26,27 @@ async def bloblo(_, m: Message):
                 a = (await _.get_users(text)).id
             except:
                 await m.reply("/block or /unblock [username]")
+            if a:
+                a_fn = (await _.get_users(a)).first_name
+        elif text.isnumeric():
+            try:
+                a = text
+            except:
+                await m.reply("provide a valid id")
+            if a:
+                a_fn = (await _.get_users(a)).first_name
+        else:
+            await m.reply("/block or /unblock [ username / id ]")
 
-        
+    if m.text.split()[0][1].lower() == "u":
+        blocked = await is_blocked(a)
+        if blocked:
+            await unblock(a)
+            await m.reply(f"{a_fn} is unblocked to use @EndAfkBot")
+        else:
+            await m.reply("user isn't blocked 😒")
+    else:
+        blocked = await is_blocked(a)
+        if not blocked:
+            await block(a)
+            await m.reply(f"{a_fn} is blocked to use @EndAfkBot\n\n **Reason** :- {reason if reason else None}")
