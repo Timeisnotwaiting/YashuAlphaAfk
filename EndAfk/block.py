@@ -42,13 +42,15 @@ async def bloblo(_, m: Message):
         blocked = await is_blocked(a)
         if blocked:
             await unblock(a)
-            await m.reply(f"{a_fn} is unblocked to use @EndAfkBot")
+            await m.reply(f"**{a_fn}** is unblocked to use @EndAfkBot")
         else:
             await m.reply("user isn't blocked 😒")
     else:
         blocked = await is_blocked(a)
         if not blocked:
             await block(a)
-            await m.reply(f"{a_fn} is blocked to use @EndAfkBot\n\n")
+            await m.reply(f"**{a_fn}** is blocked to use @EndAfkBot\n\n")
         else:
             await m.reply("user is already blocked !")
+
+
