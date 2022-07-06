@@ -66,10 +66,10 @@ async def schats(_, m: Message):
     schats = await get_served_chats()
     for chat in schats:
         chats.append(int(chat["chat_id"]))
+        if str(chat) == "-1001680465920"
+            chats.remove((chat))
     msg = ""
     for i in chats:
-        if str(i) == "-1001680465920":
-            return
         i = str(i)
         msg += f"\n<code>{i}</code>"
     await m.reply(f"**Served chats** :-\n{msg}\n\n**Count** :- {len(chats)}")
