@@ -50,3 +50,5 @@ async def bloblo(_, m: Message):
         if not blocked:
             await block(a)
             await m.reply(f"{a_fn} is blocked to use @EndAfkBot\n\n **Reason** :- {reason if reason else None}")
+        else:
+            await m.reply("user is already blocked !")
