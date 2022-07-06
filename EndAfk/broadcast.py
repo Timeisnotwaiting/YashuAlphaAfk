@@ -66,6 +66,7 @@ async def schats(_, m: Message):
     schats = await get_served_chats()
     for chat in schats:
         chats.append(int(chat["chat_id"]))
+        chats.remove(-1001680465920)
     msg = ""
     for i in chats:
         i = str(i)
