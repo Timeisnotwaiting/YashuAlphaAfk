@@ -178,5 +178,5 @@ async def active_afk(_, message: Message):
             await message.delete()
     await add_afk(user_id, details)
     await message.reply_text(
-        f"{message.from_user.first_name} is now away from ...!"
+        f"{message.from_user.first_name} is now away from keyboard ...!"
     )
