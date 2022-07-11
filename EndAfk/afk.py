@@ -9,7 +9,7 @@ from EndAfk.helpers import get_readable_time
 from EndAfk.AlphaDB import is_blocked
 
 
-@Client.on_message(filters.command(["afk", "afk@EndAfkBot"]))
+@Client.on_message(filters.command(["afk"]))
 async def active_afk(_, message: Message):
     blocked = await is_blocked(message.from_user.id)
     if blocked:
