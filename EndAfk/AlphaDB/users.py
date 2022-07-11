@@ -30,3 +30,8 @@ async def get_afk_users() -> list:
     for user in await users.to_list(length=1000000000):
         users_list.append(user)
     return users_list
+
+async def cleandb():
+    users = await usersdb.find({"user_id": {"$gt": 0}})
+    for user in users:
+        return await usersdb.delete_one({"user_id": user})
