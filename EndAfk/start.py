@@ -16,10 +16,10 @@ photo = "https://te.legra.ph/file/834b1444f48d090886fef.jpg"
 async def start(_, message: Message):
     blocked = await is_blocked(message.from_user.id)
     if blocked:
-        return await message.reply("you've been blocked try: ask @Timeisnotwaiting or @xDevesh")
+        return await message.reply("you've been blocked try: ask @Timeisnotwaiting")
     first_name = message.from_user.first_name
     await message.reply_photo(alpha,
-       caption=f"Hey {first_name}! This is End Afk ✨💫 \n\n • Belongs To The End Network")
+       caption=f"Hey {first_name}! I'm Afk of G_F_Alpha. \ntry: @THE_GODFATHER_NETWORK")
 
 
 @Client.on_message(filters.command("ping") & filters.user(SUDOERS))
