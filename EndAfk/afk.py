@@ -1,5 +1,5 @@
 import time
-
+import random
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
@@ -8,6 +8,17 @@ from EndAfk.AlphaDB import add_afk, is_afk, remove_afk
 from EndAfk.helpers import get_readable_time
 from EndAfk.AlphaDB import is_blocked
 
+ALL = ["https://te.legra.ph/file/fed1e228b5f01aee622da.jpg",
+       "https://te.legra.ph/file/29abe53c69bc4a639d384.jpg",
+       "https://te.legra.ph/file/cd75a582b667314688947.jpg",
+       "https://te.legra.ph/file/473847282743625cb72eb.jpg",
+       "https://te.legra.ph/file/d75066fb75caad7be12e2.jpg",
+       "https://te.legra.ph/file/bd7d6e72aa1544fda505b.jpg",
+       "https://te.legra.ph/file/35a451082648530464676.jpg",
+       "https://te.legra.ph/file/c22bded313c952b1ec6b1.jpg",
+      ]
+
+devil = random.choice(ALL)
 
 @Client.on_message(filters.command(["afk"]))
 async def active_afk(_, message: Message):
@@ -177,6 +188,6 @@ async def active_afk(_, message: Message):
         if I.can_delete_messages:
             await message.delete()
     await add_afk(user_id, details)
-    await message.reply_text(
-        f"{message.from_user.first_name} is now away from keyboard ...!"
+    await message.reply_photo(
+        devil, caption=f"{message.from_user.first_name} is now away from keyboard ...!"
     )
