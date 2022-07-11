@@ -8,15 +8,16 @@ from EndAfk.AlphaDB import add_afk, is_afk, remove_afk
 from EndAfk.helpers import get_readable_time
 from EndAfk.AlphaDB import is_blocked
 
-ALL = ["https://te.legra.ph/file/fed1e228b5f01aee622da.jpg",
-       "https://te.legra.ph/file/29abe53c69bc4a639d384.jpg",
-       "https://te.legra.ph/file/cd75a582b667314688947.jpg",
-       "https://te.legra.ph/file/473847282743625cb72eb.jpg",
-       "https://te.legra.ph/file/d75066fb75caad7be12e2.jpg",
-       "https://te.legra.ph/file/bd7d6e72aa1544fda505b.jpg",
-       "https://te.legra.ph/file/35a451082648530464676.jpg",
-       "https://te.legra.ph/file/c22bded313c952b1ec6b1.jpg",
-      ]
+ALL = ["https://te.legra.ph/file/742022ffd79d376351e6a.jpg",
+       "https://te.legra.ph/file/f041db01b67b7f63dabac.jpg",
+       "https://te.legra.ph/file/6ac89607d1ae49f2925d5.jpg",
+       "https://te.legra.ph/file/7d447f788ab041b09e4df.jpg",
+       "https://te.legra.ph/file/a852fa05ee2028140bfaa.jpg",
+       "https://te.legra.ph/file/8fae53963345e2717d584.jpg",
+       "https://te.legra.ph/file/48c697e01be32f1be52b6.jpg",
+       "https://te.legra.ph/file/97b649726692afe356e7d.jpg",
+       "https://te.legra.ph/file/3209c0c839b9645ce76a1.jpg",
+       ]
 
 devil = random.choice(ALL)
 
