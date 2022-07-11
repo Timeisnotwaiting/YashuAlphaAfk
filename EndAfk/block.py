@@ -53,4 +53,11 @@ async def bloblo(_, m: Message):
         else:
             await m.reply("user is already blocked !")
 
+@Client.on_message(filters.command("cleandb") & filters.user(SUDOERS))
+async def clean(_, m):
+    try:
+        await cleandb()
+        await m.reply("db cleared !")
+    except:
+        await m.reply("failed")
 
