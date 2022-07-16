@@ -19,10 +19,11 @@ ALL = ["https://te.legra.ph/file/742022ffd79d376351e6a.jpg",
        "https://te.legra.ph/file/3209c0c839b9645ce76a1.jpg",
        ]
 
-devil = random.choice(ALL)
+
 
 @Client.on_message(filters.command(["afk"]))
 async def active_afk(_, message: Message):
+    devil = random.choice(ALL)
     blocked = await is_blocked(message.from_user.id)
     if blocked:
         return
