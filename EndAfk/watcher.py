@@ -245,9 +245,9 @@ async def welcome(_, message: Message):
     await add_served_chat(chat_id)
     for member in message.new_chat_members:
         try:
-            if member.id == botid:
+            if member.id == 5561276442:
                 return await message.reply_text(
-                    f"Thanks for having me in {message.chat.title}\n\n{botname} is alive."
+                    f"Thanks for having me in {message.chat.title}\n\n@EndAfkBot is alive."
                 )
         except:
             return
