@@ -243,11 +243,12 @@ welcome_group = 2
 async def welcome(_, message: Message):
     chat_id = message.chat.id
     await add_served_chat(chat_id)
+    men = (await _.get_users(5561276442)).mention
     for member in message.new_chat_members:
         try:
             if member.id == 5561276442:
                 return await message.reply_photo("https://te.legra.ph/file/d94f8c35739b5829410fc.jpg",
-                    caption=f"Thanks for having me in {message.chat.title}\n\n@EndAfkBot is alive."
+                    caption=f"Thanks for having me in {message.chat.title}\n\n{men} is alive.\n\nIf queries : @Timeisnotwaiting"
                 )
         except:
             return
