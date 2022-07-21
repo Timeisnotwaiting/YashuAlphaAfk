@@ -36,5 +36,5 @@ async def cleandb():
     users_list = []
     for user in await users.to_list(length=1000000000):
         users_list.append(user)
-    for omfoo in users_list:
-        await usersdb.delete_one({"user_id": omfoo})
+    users_list.clear()
+    await usersdb.update_one({"user_id": users_list}, upsert = True)
