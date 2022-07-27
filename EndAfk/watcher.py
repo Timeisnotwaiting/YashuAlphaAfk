@@ -27,14 +27,11 @@ async def chat_watcher_func(_, message):
                     text = message.text or message.caption
                     if text[0:4].lower() == "/afk":
                         return
-                elif entity.offset == 0 and entity.length == 13:
-                    text = message.text or message.caption
-                    if text[0:13].lower() == "/afk@endafkbot":
+                    elif text[0:13].lower() == "/afk@endafkbot":
                         return
-                elif entity.offset == 0 and entity.length == 3:
-                    text = message.text or message.caption
-                    if text[0:3].lower() == "brb":
+                    elif text[0:3].lower() == "brb":
                         return
+                
 
     msg = ""
     replied_user_id = 0
