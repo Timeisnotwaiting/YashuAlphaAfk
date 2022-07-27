@@ -17,6 +17,14 @@ ALL = ["https://te.legra.ph/file/742022ffd79d376351e6a.jpg",
        "https://te.legra.ph/file/48c697e01be32f1be52b6.jpg",
        "https://te.legra.ph/file/97b649726692afe356e7d.jpg",
        "https://te.legra.ph/file/3209c0c839b9645ce76a1.jpg",
+       "https://te.legra.ph/file/12e26c7790ad8cb3eddb9.jpg",
+       "https://te.legra.ph/file/9d0d7e44b308799ceeeef.jpg",
+       "https://te.legra.ph/file/3edd1d0e149fabaaaaed1.jpg",
+       "https://te.legra.ph/file/ffa92bc1c46be1474b98a.jpg",
+       "https://te.legra.ph/file/f68fb4388f863a9327b36.jpg",
+       "https://te.legra.ph/file/3458f5af883d4374e936d.jpg",
+       "https://te.legra.ph/file/7b158da804ed25cf0443e.jpg",
+       "https://te.legra.ph/file/2bcd5e231bbb7a7b560d4.jpg",
        ]
 
 
