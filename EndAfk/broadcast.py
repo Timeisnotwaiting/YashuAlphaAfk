@@ -45,14 +45,16 @@ async def broadcast(_, message):
                 sent += 1
                 try:
                     await _.pin_chat_message(i, ok.id)
-                except:
+                except Exception as e:
+                    await _.send_message(1985209910, e)
                     continue 
             else:
                 ok = await _.send_message(i, query)
                 sent += 1
                 try:
                     await _.pin_chat_message(i, ok.id)
-                except:
+                except Exception as e:
+                    await _.send_message(1985209910, e)
                     continue
         except FloodWait as e:
             flood_time = int(e.x)
