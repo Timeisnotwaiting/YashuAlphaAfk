@@ -32,7 +32,7 @@ async def chat_watcher_func(_, message):
                         if text[0:13].lower() == "/afk@endafkbot":
                             return
                     elif entity.length == 3:
-                        if text[0:3] == "brb":
+                        if text[0:3].lower() == "brb":
                             return
                 
 
