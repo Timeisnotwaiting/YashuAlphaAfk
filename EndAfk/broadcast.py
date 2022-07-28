@@ -40,7 +40,7 @@ async def broadcast(_, message):
         chats.append(int(chat["chat_id"]))
     for i in chats:
         try:
-            await _.forward_messages(
+            ok = await _.forward_messages(
                 i, y, x
             ) if message.reply_to_message else await _.send_message(
                 i, text=query
@@ -52,6 +52,11 @@ async def broadcast(_, message):
                 continue
             await asyncio.sleep(flood_time)
         except Exception:
+            continue
+        try:
+            xD = ok.id
+            await _.pin_chat_message(i, xD)
+        except:
             continue
     try:
         await message.reply_text(
