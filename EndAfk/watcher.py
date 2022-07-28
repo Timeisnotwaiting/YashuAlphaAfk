@@ -23,14 +23,17 @@ async def chat_watcher_func(_, message):
     if message.entities:
         for entity in message.entities:
             if entity.type == "bot_command":
-                if entity.offset == 0 and entity.length == 4:
+                if entity.offset == 0:
                     text = message.text or message.caption
-                    if text[0:4].lower() == "/afk":
-                        return
-                    elif text[0:13].lower() == "/afk@endafkbot":
-                        return
-                    elif text[0:3].lower() == "brb":
-                        return
+                    if entity.length == 4:        
+                        if text[0:4].lower() == "/afk":
+                            return
+                    elif entity.length == 13:
+                        if text[0:13].lower() == "/afk@endafkbot":
+                            return
+                    elif entity.length == 3:
+                        if text[0:3] == "brb":
+                            return
                 
 
     msg = ""
