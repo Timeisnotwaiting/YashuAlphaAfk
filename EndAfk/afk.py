@@ -38,6 +38,14 @@ async def active_afk(_, message: Message):
     if message.sender_chat:
         return
     user_id = message.from_user.id
+    try:
+        await message.delete()
+    except:
+        pass
+    await message.reply_photo(
+        devil, caption=f"{message.from_user.first_name} is now away from keyboard ...!"
+    )
+
     verifier, reasondb = await is_afk(user_id)
     if verifier:
         await remove_afk(user_id)
@@ -192,19 +200,5 @@ async def active_afk(_, message: Message):
             "reason": None,
         }
 
-    my_id = 5546726510
-    if str(message.chat.id)[0] == "-":
-        try:
-            I = await _.get_chat_member(message.chat.id, my_id)
-            if I.can_delete_messages:
-                await message.delete()
-        except:
-            pass
-    try:
-        await message.delete()
-    except:
-        pass
     await add_afk(user_id, details)
-    await message.reply_photo(
-        devil, caption=f"{message.from_user.first_name} is now away from keyboard ...!"
-    )
+ 
