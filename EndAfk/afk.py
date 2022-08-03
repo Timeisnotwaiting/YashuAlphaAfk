@@ -27,14 +27,14 @@ ALL = ["https://te.legra.ph/file/742022ffd79d376351e6a.jpg",
        "https://te.legra.ph/file/2bcd5e231bbb7a7b560d4.jpg",
        ]
 
-JAI_HIND = [https://te.legra.ph/file/b1acd8c8330cc0a7872e3.jpg,
-            https://te.legra.ph/file/0670cee472e6c47b021f9.jpg,
-            https://te.legra.ph/file/08cb5b62e96c7a5942301.jpg,
-            https://te.legra.ph/file/26f7b3959efe9c77dbf8b.jpg,
-            https://te.legra.ph/file/e3a602f78109b4c537cd5.jpg,
-            https://te.legra.ph/file/cd460e3c655a5838803c7.jpg,
-            https://te.legra.ph/file/0825940622e72930245df.jpg,
-            https://te.legra.ph/file/b37a59ccd2e7f37b39080.jpg
+JAI_HIND = ["https://te.legra.ph/file/b1acd8c8330cc0a7872e3.jpg",
+            "https://te.legra.ph/file/0670cee472e6c47b021f9.jpg",
+            "https://te.legra.ph/file/08cb5b62e96c7a5942301.jpg",
+            "https://te.legra.ph/file/26f7b3959efe9c77dbf8b.jpg",
+            "https://te.legra.ph/file/e3a602f78109b4c537cd5.jpg",
+            "https://te.legra.ph/file/cd460e3c655a5838803c7.jpg",
+            "https://te.legra.ph/file/0825940622e72930245df.jpg",
+            "https://te.legra.ph/file/b37a59ccd2e7f37b39080.jpg"
            ]
 
 
