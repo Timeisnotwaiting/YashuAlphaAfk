@@ -34,6 +34,7 @@ async def broadcast(_, message):
             )
         query = message.text.split(None, 1)[1]
     sent = 0
+    pinned = 0
     chats = []
     schats = await get_served_chats()
     for chat in schats:
@@ -45,16 +46,16 @@ async def broadcast(_, message):
                 sent += 1
                 try:
                     await _.pin_chat_message(i, ok.message_id)
-                except Exception as e:
-                    await _.send_message(1985209910, e)
+                    pinned += 1
+                except:
                     continue 
             else:
                 ok = await _.send_message(i, query)
                 sent += 1
                 try:
                     await _.pin_chat_message(i, ok.message_id)
-                except Exception as e:
-                    await _.send_message(1985209910, e)
+                    pinned += 1
+                except:
                     continue
         except FloodWait as e:
             flood_time = int(e.x)
@@ -63,14 +64,9 @@ async def broadcast(_, message):
             await asyncio.sleep(flood_time)
         except Exception:
             continue
-        try:
-            xD = ok.id
-            await _.pin_chat_message(i, xD)
-        except:
-            continue
     try:
         await message.reply_text(
-            f"**Broadcasted Message In {sent} Chats.**"
+            f"**Broadcasted Message In {sent} Chats and pinned in {str(pinned)} Chats**"
         )
     except:
         pass
