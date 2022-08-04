@@ -21,4 +21,4 @@ async def info(_, m):
         link = getter.invite_link
     except:
         link = "None"
-    await m.reply(f"Group name :- {getter.title}\n\nInvite link :- {link}\n\nUsername :- {username}")
+    await m.reply(f"Group name :- {getter.title}\n\nInvite link :- {link}\n\nUsername :- @{username}")
