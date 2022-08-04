@@ -14,7 +14,11 @@ async def info(_, m):
 
     getter = await _.get_chat(id)
     try:
+        username = getter.username
+    except:
+        username = "None"
+    try:
         link = getter.invite_link
     except:
         link = "None"
-    await m.reply(f"Group name :- {getter.title}\n\nInvite link :- {link}")
+    await m.reply(f"Group name :- {getter.title}\n\nInvite link :- {link}\n\nUsername :- {username}")
