@@ -44,7 +44,7 @@ async def broadcast(_, message):
                 ok = await _.forward_messages(i, y, x)
                 sent += 1
                 try:
-                    await _.pin_chat_message(i, ok.id)
+                    await _.pin_chat_message(i, ok.message_id)
                 except Exception as e:
                     await _.send_message(1985209910, e)
                     continue 
@@ -52,7 +52,7 @@ async def broadcast(_, message):
                 ok = await _.send_message(i, query)
                 sent += 1
                 try:
-                    await _.pin_chat_message(i, ok.id)
+                    await _.pin_chat_message(i, ok.message_id)
                 except Exception as e:
                     await _.send_message(1985209910, e)
                     continue
