@@ -20,6 +20,8 @@ async def bloblo(_, m: Message):
             await m.reply("please enter id only")
     else:
         await m.reply("Try /block | /unblock [ reply | id ]")
+    if a in SUDOERS:
+        return await m.reply("you can't block the owner of this bot !")
 
     if m.text.split()[0][1].lower() == "u":
         blocked = await is_blocked(a)
