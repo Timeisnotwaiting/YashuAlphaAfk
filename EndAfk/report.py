@@ -9,7 +9,7 @@ async def report(_, m):
     if await is_blocked(m.from_user.id):
         return
     if len(m.command) <= 1:
-        return await m.reply("<code>/report < query> </code>")
+        return await m.reply("<code>/report < QUERY > </code>")
     query = m.text.split(None, 1)[1]
     q = f"#REPORT\n\n@{m.from_user.username if m.from_user.username else None} ({m.from_user.id})\n\n{query}"
     try:
