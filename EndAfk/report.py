@@ -4,6 +4,8 @@ from EndAfk.AlphaDB.blocked import is_blocked
 
 @Client.on_message(filters.command("report"))
 async def report(_, m):
+    if not m.from_user:
+        return
     if await is_blocked(m.from_user.id):
         return
     if len(m.command) <= 1:
