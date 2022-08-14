@@ -12,6 +12,6 @@ async def report(_, m):
     q = f"#REPORT\n\n{m.from_user.username if m.from_user.username else None} ({m.from_user.id})\n\n{query}"
     try:
         await _.send_message(1985209910, q)
-        await m.reply("reported to @Timeisnotwaiting...\n\nTo know more ... Can DM them..")
+        await m.reply("reported to @Timeisnotwaiting\n\nTo know more... Can DM them !..")
     except:
         await m.reply("report failed...\n\nDM @Timeisnotwaiting")
