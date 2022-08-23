@@ -211,7 +211,7 @@ async def active_afk(_, message: Message):
                 "data": None,
                 "reason": None,
             }
-        return details
+        return await add_afk(user_id, details)
 
     if len(message.command) == 1 and not message.reply_to_message:
         details = {
