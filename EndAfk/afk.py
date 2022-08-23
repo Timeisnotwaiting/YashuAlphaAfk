@@ -107,7 +107,7 @@ async def active_afk(_, message: Message):
         if len(message.command) == 1 and not message.reply_to_message:
             details = {
                 "type": "text",
-                "time": time.time(),
+                "time": time.time() - float(message.text.split()[1]),
                 "data": None,
                 "reason": None,
             }
