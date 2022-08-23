@@ -115,7 +115,7 @@ async def active_afk(_, message: Message):
             "type": "text_reason",
             "time": time.time(),
             "data": None,
-            "reason": _reason,
+            "reason": None,
         }
     elif (
         len(message.command) == 1
@@ -138,7 +138,7 @@ async def active_afk(_, message: Message):
             "type": "animation",
             "time": time.time() - _reason,
             "data": _data,
-            "reason": _reason,
+            "reason": None,
         }
     elif len(message.command) == 1 and message.reply_to_message.photo:
         await _.download_media(
@@ -159,7 +159,7 @@ async def active_afk(_, message: Message):
             "type": "photo",
             "time": time.time() - _reason,
             "data": None,
-            "reason": _reason,
+            "reason": None,
         }
     elif (
         len(message.command) == 1 and message.reply_to_message.sticker
@@ -190,7 +190,7 @@ async def active_afk(_, message: Message):
                 "type": "text_reason",
                 "time": time.time() - _reason,
                 "data": None,
-                "reason": _reason,
+                "reason": None,
             }
         else:
             await _.download_media(
@@ -200,7 +200,7 @@ async def active_afk(_, message: Message):
                 "type": "photo",
                 "time": time.time() - _reason,
                 "data": None,
-                "reason": _reason,
+                "reason": None,
             }
     else:
         details = {
