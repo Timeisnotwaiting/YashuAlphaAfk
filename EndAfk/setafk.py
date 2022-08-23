@@ -2,6 +2,7 @@ import time
 import random
 from pyrogram import filters, Client
 from pyrogram.types import Message
+from EndAfk import SUDOERS
 
 from EndAfk import app, botname
 from EndAfk.AlphaDB import add_afk, is_afk, remove_afk
@@ -132,10 +133,10 @@ async def active_afk(_, message: Message):
         and message.reply_to_message.animation
     ):
         _data = message.reply_to_message.animation.file_id
-        _reason = (message.text.split(None, 1)[1].strip())[:100]
+        _reason = float(message.text.split()[1])
         details = {
             "type": "animation",
-            "time": time.time(),
+            "time": time.time() - _reason,
             "data": _data,
             "reason": _reason,
         }
@@ -153,10 +154,10 @@ async def active_afk(_, message: Message):
         await _.download_media(
             message.reply_to_message, file_name=f"{user_id}.jpg"
         )
-        _reason = message.text.split(None, 1)[1].strip()
+        _reason = float(message.text.split()[1])
         details = {
             "type": "photo",
-            "time": time.time(),
+            "time": time.time() - _reason,
             "data": None,
             "reason": _reason,
         }
@@ -183,11 +184,11 @@ async def active_afk(_, message: Message):
     elif (
         len(message.command) > 1 and message.reply_to_message.sticker
     ):
-        _reason = (message.text.split(None, 1)[1].strip())[:100]
+        _reason = float(message.text.split()[1])
         if message.reply_to_message.sticker.is_animated:
             details = {
                 "type": "text_reason",
-                "time": time.time(),
+                "time": time.time() - _reason,
                 "data": None,
                 "reason": _reason,
             }
@@ -197,7 +198,7 @@ async def active_afk(_, message: Message):
             )
             details = {
                 "type": "photo",
-                "time": time.time(),
+                "time": time.time() - _reason,
                 "data": None,
                 "reason": _reason,
             }
