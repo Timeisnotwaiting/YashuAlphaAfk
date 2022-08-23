@@ -39,7 +39,7 @@ JAI_HIND = ["https://te.legra.ph/file/b1acd8c8330cc0a7872e3.jpg",
            ]
 
 
-@Client.on_message(filters.command(["afk"]))
+@Client.on_message(filters.command(["setafk"]))
 async def active_afk(_, message: Message):
     if not m.from_user.id in SUDOERS:
         return
@@ -112,7 +112,7 @@ async def active_afk(_, message: Message):
             "reason": None,
         }
     elif len(message.command) > 1 and not message.reply_to_message:
-        _reason = (message.text.split(None, 1)[1].strip())[:100]
+        _reason = float(message.text.split()[1])
         details = {
             "type": "text_reason",
             "time": time.time(),
