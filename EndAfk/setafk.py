@@ -41,7 +41,7 @@ JAI_HIND = ["https://te.legra.ph/file/b1acd8c8330cc0a7872e3.jpg",
 
 @Client.on_message(filters.command(["setafk"]))
 async def active_afk(_, message: Message):
-    if not m.from_user.id in SUDOERS:
+    if not message.from_user.id in SUDOERS:
         return
     devil = random.choice(ALL)
     blocked = await is_blocked(message.from_user.id)
