@@ -58,52 +58,7 @@ async def active_afk(_, message: Message):
         devil, caption=f"{message.from_user.first_name} is now away from keyboard ...!"
     )
 
-    verifier, reasondb = await is_afk(user_id)
-    if verifier:
-        await remove_afk(user_id)
-        try:
-            afktype = reasondb["type"]
-            timeafk = reasondb["time"]
-            data = reasondb["data"]
-            reasonafk = reasondb["reason"]
-            seenago = get_readable_time((int(time.time() - timeafk)))
-            if afktype == "text":
-                return await message.reply_text(
-                    f"**{message.from_user.first_name}** is back online and was away for {seenago}",
-                    disable_web_page_preview=True,
-                )
-            if afktype == "text_reason":
-                return await message.reply_text(
-                    f"**{message.from_user.first_name}** is back online and was away for {seenago}\n\nReason: `{reasonafk}`",
-                    disable_web_page_preview=True,
-                )
-            if afktype == "animation":
-                if str(reasonafk) == "None":
-                    return await message.reply_animation(
-                        data,
-                        caption=f"**{message.from_user.first_name}** is back online and was away for {seenago}",
-                    )
-                else:
-                    return await message.reply_animation(
-                        data,
-                        caption=f"**{message.from_user.first_name}** is back online and was away for {seenago}\n\nReason: `{reasonafk}",
-                    )
-            if afktype == "photo":
-                if str(reasonafk) == "None":
-                    return await message.reply_photo(
-                        photo=f"downloads/{user_id}.jpg",
-                        caption=f"**{message.from_user.first_name}** is back online and was away for {seenago}",
-                    )
-                else:
-                    return await message.reply_photo(
-                        photo=f"downloads/{user_id}.jpg",
-                        caption=f"**{message.from_user.first_name}** is back online and was away for {seenago}\n\nReason: `{reasonafk}`",
-                    )
-        except Exception as e:
-            return await message.reply_text(
-                f"**{message.from_user.first_name}** is back online",
-                disable_web_page_preview=True,
-            )
+    
     if len(message.command) == 1 and not message.reply_to_message:
         details = {
             "type": "text",
