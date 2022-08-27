@@ -1,3 +1,11 @@
+import asyncio
+from typing import Union
+from datetime import datetime, timedelta
+from EndAfk import cleanmode, app, botname
+from EndAfk.AlphaDB import is_cleanmode_on
+from pyrogram.errors import FloodWait
+from pyrogram.types import InlineKeyboardButton
+
 def get_readable_time(seconds: int) -> str:
     count = 0
     ping_time = ""
