@@ -143,7 +143,7 @@ async def chat_watcher_func(_, message):
                 except:
                     j += 1
                     continue
-                lmao = str(user.id)
+                user_id = (user.id)
                 verifier, reasondb = await is_afk(user.id)
                 if verifier:
                     try:
