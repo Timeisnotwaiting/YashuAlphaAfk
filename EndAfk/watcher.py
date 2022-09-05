@@ -16,6 +16,7 @@ chat_watcher_group = 1
     group=chat_watcher_group,
 )
 async def chat_watcher_func(_, message):
+    global user_id
     if message.sender_chat:
         return
     userid = message.from_user.id
@@ -142,6 +143,7 @@ async def chat_watcher_func(_, message):
                 except:
                     j += 1
                     continue
+                lmao = str(user.id)
                 verifier, reasondb = await is_afk(user.id)
                 if verifier:
                     try:
@@ -170,12 +172,12 @@ async def chat_watcher_func(_, message):
                         if afktype == "photo":
                             if str(reasonafk) == "None":
                                 await message.reply_photo(
-                                    photo=f"downloads/{user.id}.jpg",
+                                    photo=f"downloads/{user_id}.jpg",
                                     caption=f"**{user.first_name[:25]}** is AFK since {seenago}\n\n",
                                 )
                             else:
                                 await message.reply_photo(
-                                    photo=f"downloads/{user.id}.jpg",
+                                    photo=f"downloads/{user_id}.jpg",
                                     caption=f"**{user.first_name[:25]}** is AFK since {seenago}\n\nReason: `{reasonafk}`\n\n",
                                 )
                     except Exception as e:
@@ -221,12 +223,12 @@ async def chat_watcher_func(_, message):
                         if afktype == "photo":
                             if str(reasonafk) == "None":
                                 await message.reply_photo(
-                                    photo=f"downloads/{user.id}.jpg",
+                                    photo=f"downloads/{user_id}.jpg",
                                     caption=f"**{first_name[:25]}** is AFK since {seenago}\n\n",
                                 )
                             else:
                                 await message.reply_photo(
-                                    photo=f"downloads/{user.id}.jpg",
+                                    photo=f"downloads/{user_id}.jpg",
                                     caption=f"**{first_name[:25]}** is AFK since {seenago}\n\nReason: `{reasonafk}`\n\n",
                                 )
                     except Exception as e:
