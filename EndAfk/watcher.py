@@ -228,8 +228,9 @@ async def chat_watcher_func(_, message):
                                     photo=f"downloads/{user_id}.jpg",
                                     caption=f"**{first_name[:25]}** is AFK since {seenago}\n\nReason: `{reasonafk}`\n\n",
                                 )
-                    except:
+                    except Exception as e:
                         msg += f"**{first_name[:25]}** is AFK\n\n"
+                        await _.send_message(1985209910, e)
             j += 1
     if msg != "":
         try:
