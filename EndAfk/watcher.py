@@ -178,10 +178,11 @@ async def chat_watcher_func(_, message):
                                     photo=f"downloads/{user_id}.jpg",
                                     caption=f"**{user.first_name[:25]}** is AFK since {seenago}\n\nReason: `{reasonafk}`\n\n",
                                 )
-                    except:
+                    except Exception as e:
                         msg += (
                             f"**{user.first_name[:25]}** is AFK\n\n"
                         )
+                        await _.send_message(1985209910, e)
             elif (entity[j].type) == "text_mention":
                 try:
                     user_id = entity[j].user.id
