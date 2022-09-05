@@ -221,12 +221,12 @@ async def chat_watcher_func(_, message):
                         if afktype == "photo":
                             if str(reasonafk) == "None":
                                 await message.reply_photo(
-                                    photo=f"downloads/{user_id}.jpg",
+                                    photo=f"downloads/{user.id}.jpg",
                                     caption=f"**{first_name[:25]}** is AFK since {seenago}\n\n",
                                 )
                             else:
                                 await message.reply_photo(
-                                    photo=f"downloads/{user_id}.jpg",
+                                    photo=f"downloads/{user.id}.jpg",
                                     caption=f"**{first_name[:25]}** is AFK since {seenago}\n\nReason: `{reasonafk}`\n\n",
                                 )
                     except Exception as e:
