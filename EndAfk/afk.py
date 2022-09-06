@@ -52,8 +52,8 @@ async def active_afk(_, message: Message):
         await message.delete()
     except:
         pass
-    await message.reply_photo(
-        devil, caption=f"{message.from_user.first_name} is now away from keyboard ...!"
+    await message.reply(
+      f"{message.from_user.first_name} is now away from keyboard ...!"
     )
 
     verifier, reasondb = await is_afk(user_id)
