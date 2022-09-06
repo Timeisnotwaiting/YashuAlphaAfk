@@ -17,7 +17,7 @@ upl = InlineKeyboardMarkup(
                 [
                     InlineKeyboardButton(
                         text="➕ Add me to a Group",
-                        url=f"https://t.me/{botusername}?startgroup=true",
+                        url=f"https://t.me/endafkbot?startgroup=true",
                     ),
                 ]
             ]
