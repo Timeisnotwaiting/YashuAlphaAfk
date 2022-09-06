@@ -1,14 +1,14 @@
 import time
-
+import random
 from pyrogram import filters, Client
 from pyrogram.types import Message
-
+from .afk import ALL
 from EndAfk import app, boot, botname
 from EndAfk.helpers import get_readable_time
 from EndAfk import SUDOERS
 from EndAfk.AlphaDB import is_blocked
 
-alpha = "https://te.legra.ph/file/6969473800d2a8796cfd1.jpg"
+alpha = random.choice(ALL)
 
 photo = "https://te.legra.ph/file/834b1444f48d090886fef.jpg"
 
