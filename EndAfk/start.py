@@ -10,7 +10,7 @@ from EndAfk.AlphaDB import is_blocked
 
 alpha = random.choice(ALL)
 
-photo = "https://te.legra.ph/file/834b1444f48d090886fef.jpg"
+photo = "https://te.legra.ph/file/6867230d65dd500797f63.jpg"
 
 upl = InlineKeyboardMarkup(
             [
@@ -29,7 +29,7 @@ async def start(_, message: Message):
     if blocked:
         return await message.reply("you've been blocked try: ask @Timeisnotwaiting")
     first_name = message.from_user.first_name
-    await message.reply_photo(alpha,
+    await message.reply_photo(photo,
        caption=f"Hey {first_name}! I'm Afk of @THE_END_NETWORK. \n\nTry: replying afk to some media else stickers to make it more reasonable !\n\nFor help - @Timeisnotwaiting", reply_markup=upl)
 
 
