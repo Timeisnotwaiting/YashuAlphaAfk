@@ -22,7 +22,7 @@ async def chat_watcher_func(_, message):
     userid = message.from_user.id
     user_name = message.from_user.first_name
     if message.entities:
-        possible = ["/afk", "/afk@endafkbot", "brb"]
+        possible = ["/afk", "/afk@yashualpha_afk_bot", "brb"]
         message_text = message.text or message.caption
         for entity in message.entities:
             if entity.type == "bot_command":
@@ -245,10 +245,10 @@ welcome_group = 2
 async def welcome(_, message: Message):
     chat_id = message.chat.id
     await add_served_chat(chat_id)
-    men = (await _.get_users(5561276442)).mention
+    men = (await _.get_users(5511970985)).mention
     for member in message.new_chat_members:
         try:
-            if member.id == 5561276442:
+            if member.id == 5511970985:
                 return await message.reply_photo("https://te.legra.ph/file/d94f8c35739b5829410fc.jpg",
                     caption=f"Thanks for having me in {message.chat.title}\n\n{men} is alive.\n\nFor queries : @Timeisnotwaiting"
                 )
