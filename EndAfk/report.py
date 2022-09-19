@@ -1,6 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from EndAfk.AlphaDB.blocked import is_blocked
+from config import OWNER
 
 @Client.on_message(filters.command("report"))
 async def report(_, m):
@@ -13,7 +14,7 @@ async def report(_, m):
     query = m.text.split(None, 1)[1]
     q = f"#REPORT\n\n@{m.from_user.username if m.from_user.username else None} ({m.from_user.id})\n\n{query}"
     try:
-        await _.send_message(1985209910, q)
-        await m.reply("reported to @Timeisnotwaiting\n\nTo know more... Can DM them !..")
+        await _.send_message({OWNER}, q)
+        await m.reply("reported to @{OWNER}\n\nTo know more... Can DM them !..")
     except:
-        await m.reply("report failed...\n\nDM @Timeisnotwaiting")
+        await m.reply("report failed...\n\nDM @{OWNER}")
