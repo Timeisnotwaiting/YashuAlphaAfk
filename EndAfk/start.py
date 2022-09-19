@@ -11,6 +11,7 @@ from config import OWNER
 
 alpha = random.choice(ALL)
 
+uname = "afk_alpha_bot"
 
 photo = "https://te.legra.ph/file/6867230d65dd500797f63.jpg"
 
