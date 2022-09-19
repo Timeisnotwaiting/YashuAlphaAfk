@@ -1,6 +1,5 @@
 import re
 import time
-from alpha import LIST
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
