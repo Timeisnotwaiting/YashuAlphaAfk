@@ -1,6 +1,6 @@
 import re
 import time
-
+from alpha import uid, ufn, launch_time
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
@@ -245,10 +245,10 @@ welcome_group = 2
 async def welcome(_, message: Message):
     chat_id = message.chat.id
     await add_served_chat(chat_id)
-    men = (await _.get_users(5511970985)).mention
+    men = (await _.get_users(uid)).mention
     for member in message.new_chat_members:
         try:
-            if member.id == 5511970985:
+            if member.id == uid:
                 return await message.reply_photo("https://te.legra.ph/file/d94f8c35739b5829410fc.jpg",
                     caption=f"Thanks for having me in {message.chat.title}\n\n{men} is alive.\n\nFor queries : @Timeisnotwaiting"
                 )
