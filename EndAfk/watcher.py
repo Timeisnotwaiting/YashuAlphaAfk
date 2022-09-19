@@ -249,8 +249,9 @@ async def welcome(_, message: Message):
     for member in message.new_chat_members:
         try:
             if member.id == uid:
+                xD = get_readable_time(int(time.time()) - launch_time)
                 return await message.reply_photo("https://te.legra.ph/file/d94f8c35739b5829410fc.jpg",
-                    caption=f"Thanks for having me in {message.chat.title}\n\n{men} is alive.\n\nFor queries : @Timeisnotwaiting"
+                    caption=f"Thanks for having me in {message.chat.title}\n\n{men} is alive.\n\nUptime : {xD}"
                 )
         except:
             return
