@@ -3,7 +3,6 @@ import random
 from pyrogram import filters, Client
 from pyrogram.types import Message
 from EndAfk import SUDOERS
-from alpha import uname
 from EndAfk import app, botname
 from EndAfk.AlphaDB import add_afk, is_afk, remove_afk
 from EndAfk.helpers import get_readable_time
