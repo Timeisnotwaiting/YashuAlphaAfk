@@ -3,6 +3,7 @@ import logging
 from pyromod import listen
 from pyrogram import Client, idle
 from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvalid
+import time
 
 
 logging.basicConfig(
@@ -31,6 +32,7 @@ if __name__ == "__main__":
     uname = app.get_me().username
     uid = app.get_me().id
     ufn = app.get_me().first_name
+    launch_time = int(time.time())
     print(f"@{uname} Started Successfully visit other repositories of Alpha!")
     idle()
     app.stop()
