@@ -11,7 +11,6 @@ from config import OWNER
 
 alpha = random.choice(ALL)
 
-uname = LIST[0]
 
 photo = "https://te.legra.ph/file/6867230d65dd500797f63.jpg"
 
