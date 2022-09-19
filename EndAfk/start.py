@@ -7,6 +7,7 @@ from EndAfk import app, boot, botname
 from EndAfk.helpers import get_readable_time
 from EndAfk import SUDOERS
 from EndAfk.AlphaDB import is_blocked
+from alpha import uname
 
 alpha = random.choice(ALL)
 
@@ -17,7 +18,7 @@ upl = InlineKeyboardMarkup(
                 [
                     InlineKeyboardButton(
                         text="➕ Add me to a Group",
-                        url=f"https://t.me/yashualpha_afk_bot?startgroup=true",
+                        url=f"https://t.me/{uname}?startgroup=true",
                     ),
                 ]
             ]
@@ -29,8 +30,9 @@ async def start(_, message: Message):
     if blocked:
         return await message.reply("you've been blocked try: ask @Timeisnotwaiting")
     first_name = message.from_user.first_name
+    xD = get_readable_time(int(time.time())-launch_time)
     await message.reply_photo(alpha,
-       caption=f"Hey {first_name}! I'm Afk Bot by @YashuAlpha. \n\nTry: replying afk to some media else stickers to make it more reasonable !\n\nFor help - @Timeisnotwaiting", reply_markup=upl)
+       caption=f"Hey {first_name}! I'm Afk Bot by @{OWNER}. \n\nTry: replying afk to some media else stickers to make it more reasonable !\n\nUptime - {xD}", reply_markup=upl)
 
 
 @Client.on_message(filters.command("ping") & filters.user(SUDOERS))
