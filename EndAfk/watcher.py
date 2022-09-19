@@ -3,7 +3,7 @@ import time
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from EndAfk import app, botid, botname
+from EndAfk import app, botid, botname, boot
 from EndAfk.AlphaDB import add_served_chat, is_afk, remove_afk
 from EndAfk.helpers import get_readable_time
 
@@ -244,11 +244,11 @@ welcome_group = 2
 async def welcome(_, message: Message):
     chat_id = message.chat.id
     await add_served_chat(chat_id)
-    men = (await _.get_users(LIST[1])).mention
+    men = (await _.get_users(5511970985)).mention
     for member in message.new_chat_members:
         try:
-            if member.id == LIST[1]:
-                xD = get_readable_time(int(time.time()) - LIST[3])
+            if member.id == 5511970985:
+                xD = get_readable_time(int(time.time()) - int(boot))
                 return await message.reply_photo("https://te.legra.ph/file/d94f8c35739b5829410fc.jpg",
                     caption=f"Thanks for having me in {message.chat.title}\n\n{men} is alive.\n\nUptime : {xD}"
                 )
