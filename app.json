@@ -35,27 +35,32 @@
     "API_ID": {
       "description": "Get this value from my.telegram.org.",
       "required": true,
-      "value": "14151343"
+      "value": ""
     },
     "API_HASH": {
       "description": "Get this value from my.telegram.org.",
       "required": true,
-      "value": "9330f17086496c4580bdc8f8b24ec364"
+      "value": ""
     },
     "BOT_TOKEN": {
       "description": "Obtain a Telegram bot token by contacting @BotFather",
       "required": true,
-      "value": "5230754379:AAGSQvMthIM8Bdn07kuaaauI26VKbyrJV88"
+      "value": ""
     },
     "MONGO_DB_URI": {
-      "description": "omfoo db url",
+      "description": "MONGO DB URL, get from mongodb.com",
       "required": true,
-      "value": "mongodb+srv://keshavalpha:keshavalpha@cluster0.htiys.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+      "value": ""
     },
     "SUDO_USER": {
-      "description": "omfoo",
+      "description": "ENTER ID OF SUDO USERS",
       "required": true,
-      "value": "1927705508 1300561364"
+      "value": ""
+    },
+    "OWNER_USERNAME": {
+      "description": "ENTER USERNAME OF OWNER",
+      "required": true,
+      "value": ""
     }
   }
 }
