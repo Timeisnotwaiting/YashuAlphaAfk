@@ -7,10 +7,12 @@ from EndAfk import app, boot, botname
 from EndAfk.helpers import get_readable_time
 from EndAfk import SUDOERS
 from EndAfk.AlphaDB import is_blocked
-from alpha import uname
+from alpha import LIST
 from config import OWNER
 
 alpha = random.choice(ALL)
+
+uname = LIST[0]
 
 photo = "https://te.legra.ph/file/6867230d65dd500797f63.jpg"
 
