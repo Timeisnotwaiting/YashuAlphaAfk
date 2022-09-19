@@ -3,7 +3,7 @@ import random
 from pyrogram import filters, Client
 from pyrogram.types import Message
 from EndAfk import SUDOERS
-
+from alpha import uname
 from EndAfk import app, botname
 from EndAfk.AlphaDB import add_afk, is_afk, remove_afk
 from EndAfk.helpers import get_readable_time
@@ -52,7 +52,7 @@ JAI_HIND = ["https://te.legra.ph/file/b1acd8c8330cc0a7872e3.jpg",
            ]
 
 
-@Client.on_message(filters.command(["afk"]))
+@Client.on_message(filters.command(["afk", f"afk@{uname}"])
 async def active_afk(_, message: Message):
     devil = random.choice(ALL)
     blocked = await is_blocked(message.from_user.id)
