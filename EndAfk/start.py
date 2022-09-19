@@ -8,6 +8,7 @@ from EndAfk.helpers import get_readable_time
 from EndAfk import SUDOERS
 from EndAfk.AlphaDB import is_blocked
 from alpha import uname
+from config import OWNER
 
 alpha = random.choice(ALL)
 
