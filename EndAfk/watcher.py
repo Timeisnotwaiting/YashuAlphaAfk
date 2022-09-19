@@ -1,6 +1,6 @@
 import re
 import time
-from alpha import uid, ufn, launch_time
+from alpha import LIST
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
@@ -245,11 +245,11 @@ welcome_group = 2
 async def welcome(_, message: Message):
     chat_id = message.chat.id
     await add_served_chat(chat_id)
-    men = (await _.get_users(uid)).mention
+    men = (await _.get_users(LIST[1])).mention
     for member in message.new_chat_members:
         try:
-            if member.id == uid:
-                xD = get_readable_time(int(time.time()) - launch_time)
+            if member.id == LIST[1]:
+                xD = get_readable_time(int(time.time()) - LIST[3])
                 return await message.reply_photo("https://te.legra.ph/file/d94f8c35739b5829410fc.jpg",
                     caption=f"Thanks for having me in {message.chat.title}\n\n{men} is alive.\n\nUptime : {xD}"
                 )
