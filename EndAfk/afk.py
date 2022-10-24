@@ -4,7 +4,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 from EndAfk import SUDOERS
 from EndAfk import app, botname
-from EndAfk.AlphaDB import add_afk, is_afk, remove_afk
+from EndAfk.AlphaDB import add_afk, is_afk, remove_afk, check_cc
 from EndAfk.helpers import get_readable_time
 from EndAfk.AlphaDB import is_blocked
 
@@ -60,10 +60,12 @@ async def active_afk(_, message: Message):
     if message.sender_chat:
         return
     user_id = message.from_user.id
-    try:
-        await message.delete()
-    except:
-        pass
+    x = await check_cc(m.chat.id)
+    if x:
+        try:
+            await message.delete()
+        except:
+            pass
     await message.reply(
       f"{message.from_user.first_name} is now away from keyboard ...!"
     )
