@@ -17,6 +17,11 @@ async def settings(_, m):
     id = m.from_user.id
     y = await check_cc(m.chat.id)
     x = True if y else False
+    if x:
+        try:
+            await m.delete()
+        except:
+            pass
     mk = [
         [
         IKB("Commands Clean", callback_data="cc_answer"),
