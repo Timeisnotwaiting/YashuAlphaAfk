@@ -6,7 +6,7 @@ from .afk import ALL
 from EndAfk import app, boot, botname
 from EndAfk.helpers import get_readable_time
 from EndAfk import SUDOERS
-from EndAfk.AlphaDB import is_blocked
+from EndAfk.AlphaDB import is_blocked, check_cc
 from config import OWNER
 
 alpha = random.choice(ALL)
@@ -30,7 +30,13 @@ upl = InlineKeyboardMarkup(
 async def start(_, message: Message):
     blocked = await is_blocked(message.from_user.id)
     if blocked:
-        return await message.reply("you've been blocked try: ask @Timeisnotwaiting")
+        return await message.reply("you've been blocked try: ask @AlphaYashu")
+    x = await check_cc(m.chat.id)
+    if x:
+        try:
+            await m.delete()
+        except:
+            pass
     first_name = message.from_user.first_name
     xD = get_readable_time(int(time.time())-int(boot))
     await message.reply_photo(alpha,
