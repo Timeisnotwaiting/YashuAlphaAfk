@@ -60,7 +60,7 @@ async def active_afk(_, message: Message):
     if message.sender_chat:
         return
     user_id = message.from_user.id
-    x = await check_cc(m.chat.id)
+    x = await check_cc(message.chat.id)
     if x:
         try:
             await message.delete()
